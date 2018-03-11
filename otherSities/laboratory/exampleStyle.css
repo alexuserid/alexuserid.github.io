@@ -5,11 +5,11 @@
 input[name="example"] {display: none}
 
 /*указать какой рисунок показывать когда включен тот или иной лейбл*/
-#ex1:checked ~ .gallery {background-image: url(exs/t1.jpg);}
-#ex2:checked ~ .gallery {background-image: url(exs/t2.jpg);}
-#ex3:checked ~ .gallery {background-image: url(exs/t3.jpg);}
-#ex4:checked ~ .gallery {background-image: url(exs/t4.jpg);}
-#ex5:checked ~ .gallery {background-image: url(exs/t5.jpg);}
+#ex1:checked ~ .gallery {background-image: url(t1.jpg);}
+#ex2:checked ~ .gallery {background-image: url(t2.jpg);}
+#ex3:checked ~ .gallery {background-image: url(t3.jpg);}
+#ex4:checked ~ .gallery {background-image: url(t4.jpg);}
+#ex5:checked ~ .gallery {background-image: url(t5.jpg);}
 
 
 /*стилизовать блок с изображением*/

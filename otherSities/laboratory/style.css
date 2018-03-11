@@ -1,0 +1,158 @@
+::selection {background:#ddd;}
+::-moz-selection {background:#ddd;}
+
+body {
+	font-family: 'Monserrat', sans-serif;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	max-width: 800px;
+}
+
+
+/*настройка подложки хедера*/
+header {
+	position: relative;
+	height: 80px;
+	padding: 1.9%;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+/*размер изображения логотипа*/
+header img {
+	height: 6.5em;
+	width: auto;
+}
+/*положение контейнера с логотипом*/
+header .logo-box {
+	float: left;
+	padding: 0% 1% 0 5%;
+}
+/*общие настройки навигационного списка*/
+header ul {
+	padding-left: 0;
+	float: right;
+	width: 60%;
+	margin: 30px 5% 0 4%;
+}
+/*настройки пунктов навигационного списка*/
+header li {
+	display: inline-block;
+	padding: 2%;
+}
+/*текст ссылок навигационного списка*/
+header nav a {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+}
+/*динамика линии под ссылками навигационного списка*/
+header nav a:after {
+	content: "";
+	width: 0;
+	height: 2px;
+	position: absolute;
+	left: 50%;
+	bottom: -4px;
+	background: #222222;
+	transition: width .2s linear;
+	-o-transition: width .2s linear;
+	-moz-transition: width .2s linear;
+	-webkit-transition: width .2s linear;
+	transform:translateX(-50%);
+	-o-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+}
+header a:hover:after {
+	width: 100%;
+}
+	
+/*включение и настройка изображений под хедером главной и починок*/
+.content .background {
+	background-image: url(bg1.jpg);
+}
+.repairing-background {
+	background-image: url(bg2.jpg);
+}
+.content .background, .repairing-background {
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+	max-width: 800px;
+	height: 230px;
+}
+/*настройка текстового контента*/
+.content {
+	position: relative;
+	text-align: justify;
+}
+.content a {
+	color: #777;
+}
+.content .main, .rep-text, .contact_info {
+	margin: 20px 0;
+	padding: 0 20px 0 20px;
+}
+
+
+
+
+.footer {
+	box-shadow: 0 4px 6px rgba(0,0,0,.2);
+	padding: 20px;
+	margin-top: 30px;
+}
+.footer__content {
+	font-size: 12px;
+	text-align: right;
+}
+
+
+/*адаптация под уменьшенные окна и мобильные устройства*/
+@media screen and (max-width: 761px) {
+	header {
+		position: relative;
+		height: auto;
+		padding: 1.9%;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+	}
+	header img {
+		height: 2.5em;
+		width: auto;
+	}
+	header .logo-box {
+		float: none;
+		text-align: center;
+		padding: 0 0 0.5em 0;
+	}
+	header ul {
+		float: none;
+		width: auto;
+		margin: 0;
+		text-align: center;
+	}
+	header li {
+		display: block;
+		padding: 3%;
+	}
+
+	.bg {
+		min-width: 100%;
+		max-width: 800px;
+		max-height: 120px;
+		overflow: hidden;
+	}
+
+	.content .background, .repairing-background {
+		background-size: contain;
+		background-repeat: no-repeat;
+		min-width: 100%;
+		width: 100%;
+		max-width: 800px;
+		height: 230px;
+
+	}
+
+}

@@ -1,0 +1,153 @@
+::selection {background:#ddd;}
+::-moz-selection {background:#ddd;}
+
+/*скрыть радиокнопки*/
+input[name="example"] {display: none}
+
+/*указать какой рисунок показывать когда включен тот или иной лейбл*/
+#ex1:checked ~ .gallery {background-image: url(exs/t1.jpg);}
+#ex2:checked ~ .gallery {background-image: url(exs/t2.jpg);}
+#ex3:checked ~ .gallery {background-image: url(exs/t3.jpg);}
+#ex4:checked ~ .gallery {background-image: url(exs/t4.jpg);}
+#ex5:checked ~ .gallery {background-image: url(exs/t5.jpg);}
+
+
+/*стилизовать блок с изображением*/
+.gallery {
+	position: relative;
+	padding: 45% 0 1% 0;
+	text-align: center;
+	background: no-repeat center; 
+	background-size: contain; 
+}
+
+/*стилизовать блок с текстом лейблов*/
+.gallery label {
+	display: inline-block;
+	background: 50% 100%;
+}
+.dots {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,.0);
+	box-shadow: 0.5px 0.5px 0 rgba(200,0,0,1),
+				-0.5px -0.5px 0 rgba(200,0,0,1),
+				-0.5px 0.5px 0 rgba(200,0,0,1),
+				0.5px -0.5px 0 rgba(200,0,0,1),
+				inset 1px 1px 0 rgba(255,0,0,1),
+				inset -1px -1px 0 rgba(255,0,0,1),
+				inset -1px 1px 0 rgba(255,0,0,1),
+				inset 1px -1px 0 rgba(255,0,0,1);
+	margin: 0 0.3em 15% 0.3em;
+}
+
+/*стилизовать текст лейблов в активном состоянии и при наведении на них*/
+#ex1:checked ~ .gallery label:nth-child(1) .dots, 
+#ex2:checked ~ .gallery label:nth-child(2) .dots, 
+#ex3:checked ~ .gallery label:nth-child(3) .dots, 
+#ex4:checked ~ .gallery label:nth-child(4) .dots, 
+#ex5:checked ~ .gallery label:nth-child(5) .dots, 
+.dots:hover {
+	background-color: rgba(0,0,0,.9);
+	width: 0.6em;
+	height: 0.6em;
+}
+
+/*обозначение стрелок и их оформление*/
+.right {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 1.2em solid;
+	border-color: transparent transparent rgba(0,0,0,.9) rgba(0,0,0,.9);
+	right: 5em;
+	top: 45%;
+	transform: rotate(-135deg);
+}
+.left {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 1.2em solid;
+	border-color: transparent transparent rgba(0,0,0,.9) rgba(0,0,0,.9);
+	left: 5em;
+	top: 45%;
+	transform: rotate(45deg);
+}
+
+
+
+
+/*обозначение кнопок, их положение итд*/
+.gallery label:before {
+ 	position: absolute; 
+ 	top: 0%; 
+ 	border-width: 10.94em 2.5em; 
+ 	border-style: solid;
+}
+
+/*прописывание кнопок при случае выбора каждого из элементов*/
+#ex1:checked ~ .gallery label:nth-of-type(2):before,
+#ex2:checked ~ .gallery label:nth-of-type(3):before,
+#ex3:checked ~ .gallery label:nth-of-type(4):before,
+#ex4:checked ~ .gallery label:nth-of-type(5):before,
+#ex5:checked ~ .gallery label:nth-of-type(1):before {
+	content: "";
+	border-color: rgba(0,0,0,.0); 
+	right: 1.5em; 
+}
+#ex1:checked ~ .gallery label:nth-of-type(5):before,
+#ex2:checked ~ .gallery label:nth-of-type(1):before,
+#ex3:checked ~ .gallery label:nth-of-type(2):before,
+#ex4:checked ~ .gallery label:nth-of-type(3):before,
+#ex5:checked ~ .gallery label:nth-of-type(4):before {
+	content: "";
+	border-color: rgba(0,0,0,.0); 
+	left: 1.5em; 
+}
+
+
+
+
+
+
+
+
+
+
+/*адаптация для уменьшенных экранов и устройств*/
+@media screen and (max-width: 761px) {
+	.right {
+		border: 0.8em solid;
+		border-color: transparent transparent rgba(0,0,0,.9) rgba(0,0,0,.9);
+		right: 1.8em;
+		top: 45%;
+	}
+	.left {
+		border: 0.8em solid;
+		border-color: transparent transparent rgba(0,0,0,.9) rgba(0,0,0,.9);
+		left: 1.8em;
+		top: 45%;
+		transform: rotate(45deg);
+	}
+	.gallery label:before {
+ 		border-width: 6em 2em; 
+ 	}
+
+
+ 	#ex1:checked ~ .gallery label:nth-of-type(2):before,
+ 	#ex2:checked ~ .gallery label:nth-of-type(3):before,
+ 	#ex3:checked ~ .gallery label:nth-of-type(4):before,
+ 	#ex4:checked ~ .gallery label:nth-of-type(5):before,
+ 	#ex5:checked ~ .gallery label:nth-of-type(1):before { 
+ 		right: 0.1em; 
+ 	}
+ 	#ex1:checked ~ .gallery label:nth-of-type(5):before,
+ 	#ex2:checked ~ .gallery label:nth-of-type(1):before,
+ 	#ex3:checked ~ .gallery label:nth-of-type(2):before,
+ 	#ex4:checked ~ .gallery label:nth-of-type(3):before,
+ 	#ex5:checked ~ .gallery label:nth-of-type(4):before {
+ 		left: 0.1em;
+ 	}
+}
